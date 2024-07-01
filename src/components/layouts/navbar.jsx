@@ -1,6 +1,5 @@
-import { CircleUser, Menu, Package2 } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import { CircleUser, Menu, Package2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,11 +7,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Outlet } from "react-router-dom"
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Outlet } from "react-router-dom";
 
-function SharedLayout() {
+function NavbarLayout() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
@@ -22,13 +21,31 @@ function SharedLayout() {
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">Developer Portfolio</span>
           </a>
           <a
-            href="#"
+            href="#about"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Home
+            About
+          </a>
+          <a
+            href="#projects"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Projects
+          </a>
+          <a
+            href="#skills"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Skills
+          </a>
+          <a
+            href="#contact"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Contact
           </a>
         </nav>
         <Sheet>
@@ -49,13 +66,31 @@ function SharedLayout() {
                 className="flex items-center gap-2 text-lg font-semibold"
               >
                 <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
+                <span className="sr-only">Developer Portfolio</span>
               </a>
               <a
-                href="#"
+                href="#about"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Home
+                About
+              </a>
+              <a
+                href="#projects"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Projects
+              </a>
+              <a
+                href="#skills"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Skills
+              </a>
+              <a
+                href="#contact"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Contact
               </a>
             </nav>
           </SheetContent>
@@ -79,11 +114,11 @@ function SharedLayout() {
           </DropdownMenu>
         </div>
       </header>
-      <main className="flex-grow p-4 overflow-auto">
+      <main className="flex-grow p-4 overflow-auto bg-gray-50">
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
 
-export default SharedLayout;
+export default NavbarLayout;
